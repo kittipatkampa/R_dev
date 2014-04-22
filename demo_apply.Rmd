@@ -17,6 +17,7 @@ meanHeight <- function(df) {
 ```
 
 First, let's look at lapply
+LAPPLY -- loop over and apply a function on each element in a list
 
 ```{r}
 lapply.result <- lapply(X=L, FUN=meanHeight)
@@ -25,6 +26,7 @@ print(lapply.result)
 ```
 
 Now try sapply
+SAPPLY -- same to LAPPLY but will simplify the output
 
 ```{r}
 sapply.result <- sapply(X=L, FUN=meanHeight)
