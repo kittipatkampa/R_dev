@@ -16,8 +16,10 @@ meanHeight <- function(df) {
 }
 ```
 
+lapply
+========================================================
 First, let's look at lapply
-LAPPLY -- loop over and apply a function on each element in a list
+LAPPLY -- loop over and apply a function on each element in a list, and always return a list
 
 ```{r}
 lapply.result <- lapply(X=L, FUN=meanHeight)
@@ -25,6 +27,14 @@ class(lapply.result)
 print(lapply.result)
 ```
 
+Each output list element can have different length
+```{r}
+v <- 1:5
+lapply(v,runif)
+```
+
+sapply
+========================================================
 Now try sapply
 SAPPLY -- same to LAPPLY but will simplify the output
 
@@ -32,4 +42,11 @@ SAPPLY -- same to LAPPLY but will simplify the output
 sapply.result <- sapply(X=L, FUN=meanHeight)
 class(sapply.result)
 print(sapply.result)
+```
+
+In case that each output has different length, the simplest form to contain such output is a list.
+So, sapply will output a list each of whose elements has different length instead.
+```{r}
+v <- 1:5
+sapply(v,runif)
 ```
