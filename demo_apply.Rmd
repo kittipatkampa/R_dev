@@ -50,3 +50,16 @@ So, sapply will output a list each of whose elements has different length instea
 v <- 1:5
 sapply(v,runif)
 ```
+
+apply
+========================================================
+APPLY -- collapse a dimension of an array by a function
+```{r}
+myArray <- array(1:24, c(2,3,4))
+## we want to find max over the third dimension, and preserve the first and second dim.
+apply(X=myArray, MARGIN=c(1,2), FUN=max)
+## a simpler example
+m1 <- myArray[,,1]
+apply(m1, 1, sum)
+apply(m1, 2, sum)
+```
