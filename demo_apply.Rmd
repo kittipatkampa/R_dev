@@ -1,0 +1,33 @@
+?apply family
+========================================================
+
+This document shows some examples of how to use ?apply
+
+```{r}
+class1 <- data.frame('name'=c('John','Jane','Jraps','Jwchit'),
+          'height'=c(130,180,200,196))
+class2 <- data.frame('name'=c('Kohn','Kane','Kraps'),
+          'height'=c(120,150,130))
+L <- list("class1"=class1,"class2"=class2)
+
+## Let's define a function to calculate the mean height
+meanHeight <- function(df) {
+        mean(df$height, na.rm=T)
+}
+```
+
+First, let's look at lapply
+
+```{r}
+lapply.result <- lapply(X=L, FUN=meanHeight)
+class(lapply.result)
+print(lapply.result)
+```
+
+Now try sapply
+
+```{r}
+sapply.result <- sapply(X=L, FUN=meanHeight)
+class(sapply.result)
+print(sapply.result)
+```
